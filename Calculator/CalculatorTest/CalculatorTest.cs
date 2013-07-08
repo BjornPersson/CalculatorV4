@@ -4,23 +4,22 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CalculatorTest
 {
     [TestClass]
-    public class UnitTest1
+    public class CalculatorTest
     {
         [TestMethod]
         public void HandleButton1Test()
         {
-            CalculatorHelper.HandleButton1();
+            CalculatorHelper calculatorhelper = new CalculatorHelper();
+            calculatorhelper.HandleButton1();
             Assert.AreEqual(1, CalculatorHelper.Operand1);
         }
-    }
 
-    public class CalculatorHelper
-    {
-        public static int Operand1 { get; set; }
-
-        public static void HandleButton1()
+        [TestMethod]
+        public void Display1Test()
         {
-            Operand1 = 1;
+            CalculatorHelper calculatorhelper = new CalculatorHelper();
+            calculatorhelper.HandleButton1();
+            Assert.AreEqual("1", calculatorhelper.DisplayText);
         }
     }
 }
